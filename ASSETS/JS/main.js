@@ -16,28 +16,13 @@ incrementBtn.setAttribute("class", "button");
 
 let countEl = document.querySelector("#count-el")
 
-
-incrementBtn.addEventListener('click', increment)
-
-function increment() {
- if (count >=0 && count < 100) {
-
-    countEl.innerHTML =  count += 1
-  }
-}
-
-decrementBtn.addEventListener('click', decrement)
-
-function decrement() {
- if (count > 0 && count <= 100) {
-    countEl.innerHTML = count -= 1
-  }
-}
-
-
-resetBtn.addEventListener("click", reset)
-
-function reset() {
-  countEl.innerHTML = 0
+incrementBtn.addEventListener("click", () => {
+  if(count >=0 && count < 100) { countEl.textContent = count +=1}
+});
+decrementBtn.addEventListener("click", () => {
+  if(count > 0 && count < 100) { countEl.textContent = count -=1}
+});
+resetBtn.addEventListener("click", () => {
+  countEl.textContent = 0
   count= 0
-}
+});
